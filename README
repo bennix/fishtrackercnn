@@ -1,0 +1,88 @@
+Blob is a simple, easy-to-use, accurate, robust,and efficient package for blob 
+detection and parameter estimation. It includes 2D, 3D, determinant of the hessian,
+Laplacian of the Gaussian, and derivative of the Gaussian. 
+This document explains the use of Blob.
+
+Blob is available at 
+www.mathworks.cn/matlabcentral/fileexchange/38782
+
+Table of Contents
+=================
+
+- Installation
+- `detector_2D' Usage
+- `detector_3D' Usage
+- Noise suppression
+- Examples
+
+
+Installation and Data Format
+============================
+
+	matlab>> compile
+
+`detector_2D' Usage
+=================
+
+matlab> features = detector_2D(image, [,'asp',asp ] [,'min_scale',min_scale ][,'max_scale',max_scale ]...
+             [,'numlevels'S][,'sigma0',sigma0 ][,'presmooth',presmooth ][,'threshold' thresh ]...
+             [,'operator',operator ][,'checkboundary',checkboundary][,'iso',iso][,'like',like][,'min_max',min_max])
+
+        image:
+            An two dimensional image within 0 and 1 (type must be double).
+        asp:
+            maximum allowed aspect ratio, i.e. length/width.
+        min_scale:
+            lower bound of scale.
+        max_scale:
+            upper bound of scale.
+        numlevels (S):
+            number of levels per octave, 3 will be OK.
+        sigma0:
+            to generate scales, scales = sigma0 * 2 ^ (s/S), s=0,1,...
+        presmooth:
+            pre-smoothing scale, should greater than the first scale
+        threshold:
+            contrast threshold, should greater than 0.025, larger value can filter noise.
+        operator:
+            either 'doh','log',or 'dog'
+        checkboundary:
+            whether remove boundary feature
+        iso:
+            round or ellipse feature.
+        like:
+            how many direct neighbors have same sign as the feature, 
+            only for 'log' and 'dog', within 5 and 8, 
+            greater value detects less noise.
+        min_max:
+            min /max of neighbors, within 0.1 and 0.99, 
+            greater value detects less noise.
+
+`detector_3D' Usage
+=================
+
+matlab> features = detector_3D(image, [,'asp',asp ] [,'min_scale',min_scale ][,'max_scale',max_scale ]...
+             [,'numlevels'S][,'sigma0',sigma0 ][,'presmooth',presmooth ][,'threshold' thresh ]...
+             [,'operator',operator ][,'checkboundary',checkboundary][,'iso',iso][,'like',like][,'min_max',min_max])
+
+        like:
+            how many direct neighbors have same sign as the feature, 
+            only for 'log' and 'dog', within 14 and 16, 
+            greater value detects less noise.
+
+        asp:
+            maximum allowed aspect ratio, i.e. second semi axis/first semi axis,
+            third semi axis/second semi axis.
+
+- Noise suppression
+=================
+        high values for threshold,like, and min_max.
+
+- Examples
+=================
+LoG
+[frames1] = detector_3D(I1,'operator','log') ;
+do no discard boundary features
+[frames1] = detector_3D(I1,'checkboundary',0) ;
+filter out noise
+[frames1] = detector_2D( I1,'min_max',.92) ;
