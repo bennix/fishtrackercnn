@@ -10,8 +10,8 @@ if ismember(check_seg_id, tracks{check_tracks_id}) && check_seg_id~=-1
         compared_frame_no=all_segments{check_seg_id}.segment_records(1,1);
         compared_x=all_segments{check_seg_id}.segment_records(1,3);
         compared_y=all_segments{check_seg_id}.segment_records(1,4);
-        opticFlow = opticalFlowFarneback;
-        reset(opticFlow)
+        %opticFlow = opticalFlowFarneback;
+        %reset(opticFlow)
         w=25;
         frameno=all_segments{seg_id}.segment_records(end,1);
         filename=sprintf(filenamebase,frameno);
@@ -19,7 +19,8 @@ if ismember(check_seg_id, tracks{check_tracks_id}) && check_seg_id~=-1
         startx=all_segments{seg_id}.segment_records(end,3);
         starty=all_segments{seg_id}.segment_records(end,4);
         patch_im=frameGray(starty-w:starty+w,startx-w:startx+w);
-        flow = estimateFlow(opticFlow,frameGray);
+        %flow = estimateFlow(opticFlow,frameGray);
+        frame1  = gpuArray(frameGray);
         %figure;
         records=[];
         while frameno<=compared_frame_no
@@ -27,11 +28,18 @@ if ismember(check_seg_id, tracks{check_tracks_id}) && check_seg_id~=-1
             fprintf('.');
             filename=sprintf(filenamebase,frameno);
             frameGray = imread(filename);
-            flow = estimateFlow(opticFlow,frameGray);
-            Vx_patch=flow.Vx(starty-w:starty+w,startx-w:startx+w);
-            Vy_patch=flow.Vy(starty-w:starty+w,startx-w:startx+w);
-            theta_patch=flow.Orientation(starty-w:starty+w,startx-w:startx+w);
-            mag_patch=flow.Magnitude(starty-w:starty+w,startx-w:startx+w);
+            frame2  = gpuArray(frameGray);
+            [Vx,Vy]=FarnebackOpticalFlow_GPU(frame1,frame2);
+            Vx=gather(Vx);
+            Vy=gather(Vy);
+            
+            Magnitude=sqrt(Vx.^2+Vy.^2);
+            Orientation=atan2(Vy,Vx);
+            % flow = estimateFlow(opticFlow,frameGray);
+            Vx_patch=Vx(starty-w:starty+w,startx-w:startx+w);
+            Vy_patch=Vy(starty-w:starty+w,startx-w:startx+w);
+            theta_patch=Orientation(starty-w:starty+w,startx-w:startx+w);
+            mag_patch=Magnitude(starty-w:starty+w,startx-w:startx+w);
             bw=mag_patch>1;
             %         bw2= mag_patch;
             %         bw2(:)=0;
@@ -73,16 +81,17 @@ if ismember(check_seg_id, tracks{check_tracks_id}) && check_seg_id~=-1
                 starty=round(ly(2));
             end
             
-            
+            frame1=frame2;
         end
         fprintf('\n');
         if ~isempty(records)
-          ratio=sum(records(:,4)>0.5)/size(records,1);
-        %distance=sqrt((compared_x-startx)^2+(compared_y-starty)^2);
-        %distance=min(records(:,3));
-           distance=min(records(round(size(records,1)/2):end,3));
-           records(records(:,end)>=compared_frame_no,:)=[];
+            ratio=sum(records(:,4)>0.5)/size(records,1);
+            %distance=sqrt((compared_x-startx)^2+(compared_y-starty)^2);
+            %distance=min(records(:,3));
+            distance=min(records(round(size(records,1)/2):end,3));
+            records(records(:,end)>=compared_frame_no,:)=[];
         end
+        
     end
     
 end

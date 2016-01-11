@@ -2,7 +2,7 @@ load('config.mat','filenamebase','database','total_frame','total_fish');
 
 load([database '\all_segments.mat'])
 load([database '\tracks.mat']);
-
+count=0;
 LT=length(tracks);
 for lt=1:LT
     IDs=tracks{lt};
@@ -63,7 +63,7 @@ for lt=1:LT
         filename=sprintf([database '\\train2\\%d\\C%05d.bmp'],[fish_id,frameno]);
         imwrite(headimage,filename);
         
-        
+        count=count+1;
         % Normal +1 dx
 %         sel_x=headx+1;
 %         sel_y=heady;
@@ -313,7 +313,8 @@ for lt=1:LT
         %imwrite(headimage,filename);
         %     filename=sprintf('F:\\CoreView_258\\data\\train2\\%d\\F%05d.bmp',[fish_id,frameno]);
         fprintf('%05d\n',frameno);
-        if frameno>(total_frame*0.3)
+        if count>(total_frame*0.3)
+            count=0;
             break
         end
         %     imwrite(im,filename);
