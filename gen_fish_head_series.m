@@ -17,7 +17,7 @@ end
 % show debugging information.
 do_debug = 1;
 try % Initialization
-    ppm = ParforProgressStarter2('detect ang generate fish head', N, percentage_update, do_debug, run_javaaddpath, show_execution_time);
+    ppm = ParforProgressStarter2('detect and generate fish head', N, percentage_update, do_debug, run_javaaddpath, show_execution_time);
 catch me % make sure "ParforProgressStarter2" didn't get moved to a different directory
     if strcmp(me.message, 'Undefined function or method ''ParforProgressStarter2'' for input arguments of type ''char''.')
         error('ParforProgressStarter2 not in path.');
