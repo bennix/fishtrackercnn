@@ -13,7 +13,7 @@ function angle = pcaangle(x, y)
 %   If pcaangle is called with no arguments, the function enters
 %   demonstration mode. 
 
-%% AUTHOR    : Jøger Hansegård 
+%% AUTHOR    : Jï¿½ger Hansegï¿½rd 
 %% $DATE     : 06-Dec-2004 10:13:10 $ 
 %% DEVELOPED : 7.0.1.24704 (R14) Service Pack 1 
 %% FILENAME  : pcaangle.m 
@@ -34,4 +34,4 @@ c = cov(x, y);
 
 %Extract the angle of the major axis
 [xa, ya] = deal(a(1,ind(end)), a(2,ind(end)));
-angle = cart2pol(xa, ya)/pi*180;
+angle = cart2pol(real(xa), real(ya))/pi*180;

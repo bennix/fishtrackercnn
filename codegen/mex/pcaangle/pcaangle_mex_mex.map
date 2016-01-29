@@ -1,0 +1,15 @@
+MEX {
+	global:
+		mexFunction;
+		emlrtMexFcnProperties;
+		pcaangle;
+		emxEnsureCapacity;
+		emxFree_real_T;
+		emxInit_real_T;
+		emxInit_real_T1;
+		pcaangle_initialize;
+		pcaangle_terminate;
+		pcaangle_atexit;
+	local:
+		*;
+};
