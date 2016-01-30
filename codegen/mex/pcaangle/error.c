@@ -12,7 +12,7 @@
 
 /* Variable Definitions */
 static emlrtRTEInfo i_emlrtRTEI = { 17, 9, "error",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/error.m" };
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/eml/+coder/+internal/error.m" };
 
 /* Function Definitions */
 void error(const emlrtStack *sp)

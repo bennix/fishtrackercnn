@@ -12,7 +12,8 @@
 
 /* Variable Definitions */
 static emlrtRSInfo ac_emlrtRSI = { 50, "mod",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+scalar/mod.m" };
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/eml/+coder/+internal/+scalar/mod.m"
+};
 
 /* Function Declarations */
 static int32_T div_s32(const emlrtStack *sp, int32_T numerator, int32_T

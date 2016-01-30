@@ -15,20 +15,20 @@
 
 /* Variable Definitions */
 static emlrtRSInfo e_emlrtRSI = { 34, "mean",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/mean.m" };
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/lib/matlab/datafun/mean.m" };
 
 static emlrtRSInfo f_emlrtRSI = { 36, "combine_vector_elements",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/private/combine_vector_elements.m"
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/lib/matlab/datafun/private/combine_vector_elements.m"
 };
 
 static emlrtRTEInfo e_emlrtRTEI = { 29, 5, "mean",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/mean.m" };
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/lib/matlab/datafun/mean.m" };
 
 static emlrtRTEInfo f_emlrtRTEI = { 20, 5, "mean",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/mean.m" };
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/lib/matlab/datafun/mean.m" };
 
 static emlrtRTEInfo g_emlrtRTEI = { 16, 15, "mean",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/mean.m" };
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/lib/matlab/datafun/mean.m" };
 
 /* Function Definitions */
 real_T mean(const emlrtStack *sp, const emxArray_real_T *x)

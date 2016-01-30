@@ -12,15 +12,15 @@
 
 /* Variable Definitions */
 static emlrtMCInfo emlrtMCI = { 14, 25, "warning",
-  "/usr/local/MATLAB/R2015b/toolbox/shared/coder/coder/+coder/+internal/warning.m"
+  "/Applications/MATLAB_R2015b.app/toolbox/shared/coder/coder/+coder/+internal/warning.m"
 };
 
 static emlrtMCInfo b_emlrtMCI = { 14, 9, "warning",
-  "/usr/local/MATLAB/R2015b/toolbox/shared/coder/coder/+coder/+internal/warning.m"
+  "/Applications/MATLAB_R2015b.app/toolbox/shared/coder/coder/+coder/+internal/warning.m"
 };
 
 static emlrtRSInfo yb_emlrtRSI = { 14, "warning",
-  "/usr/local/MATLAB/R2015b/toolbox/shared/coder/coder/+coder/+internal/warning.m"
+  "/Applications/MATLAB_R2015b.app/toolbox/shared/coder/coder/+coder/+internal/warning.m"
 };
 
 /* Function Declarations */

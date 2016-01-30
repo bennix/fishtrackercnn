@@ -1,15 +1,10 @@
-MEX {
-	global:
-		mexFunction;
-		emlrtMexFcnProperties;
-		pcaangle;
-		emxEnsureCapacity;
-		emxFree_real_T;
-		emxInit_real_T;
-		emxInit_real_T1;
-		pcaangle_initialize;
-		pcaangle_terminate;
-		pcaangle_atexit;
-	local:
-		*;
-};
+_mexFunction
+_emlrtMexFcnProperties
+_pcaangle
+_emxEnsureCapacity
+_emxFree_real_T
+_emxInit_real_T
+_emxInit_real_T1
+_pcaangle_initialize
+_pcaangle_terminate
+_pcaangle_atexit

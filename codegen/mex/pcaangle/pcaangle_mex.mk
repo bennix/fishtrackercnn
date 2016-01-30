@@ -1,6 +1,6 @@
-START_DIR = /home/bennix/Downloads/fishtrackercnn-master
+START_DIR = /Users/xuzhiping/fishtrackercnn
 
-MATLAB_ROOT = /usr/local/MATLAB/R2015b
+MATLAB_ROOT = /Applications/MATLAB_R2015b.app
 MAKEFILE = pcaangle_mex.mk
 
 include pcaangle_mex.mki
@@ -32,7 +32,7 @@ SRC_FILES =  \
 	pcaangle_emxutil.c
 
 MEX_FILE_NAME_WO_EXT = pcaangle_mex
-MEX_FILE_NAME = $(MEX_FILE_NAME_WO_EXT).mexa64
+MEX_FILE_NAME = $(MEX_FILE_NAME_WO_EXT).mexmaci64
 TARGET = $(MEX_FILE_NAME)
 
 SYS_LIBS = 

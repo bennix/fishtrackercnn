@@ -1,20 +1,20 @@
 # Make settings for pcaangle
-CC=gcc
-CFLAGS=-ansi -D_GNU_SOURCE  -fexceptions -fPIC -fno-omit-frame-pointer -pthread
-CLIBS=-Wl,-rpath-link,/usr/local/MATLAB/R2015b/bin/glnxa64 -L/usr/local/MATLAB/R2015b/bin/glnxa64 -lmx -lmex -lmat -lm -lstdc++
-COPTIMFLAGS=-O -DNDEBUG
+CC=/usr/bin/xcrun -sdk macosx10.11 clang
+CFLAGS=-fno-common -arch x86_64 -mmacosx-version-min=10.11 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -DMATLAB_MEX_FILE
+CLIBS=
+COPTIMFLAGS=-O2 -DNDEBUG
 CDEBUGFLAGS=-g
-CXX=g++
-CXXFLAGS=-ansi -D_GNU_SOURCE -fPIC -fno-omit-frame-pointer -pthread
-CXXLIBS=-Wl,-rpath-link,/usr/local/MATLAB/R2015b/bin/glnxa64 -L/usr/local/MATLAB/R2015b/bin/glnxa64 -lmx -lmex -lmat -lm
-CXXOPTIMFLAGS=-O -DNDEBUG
+CXX=/usr/bin/xcrun -sdk macosx10.11 clang
+CXXFLAGS=-fno-common -arch x86_64 -mmacosx-version-min=10.11 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -DMATLAB_MEX_FILE
+CXXLIBS=
+CXXOPTIMFLAGS=-O2 -DNDEBUG
 CXXDEBUGFLAGS=-g
-LD=gcc
-LDFLAGS=-pthread -shared -Wl,--version-script,/usr/local/MATLAB/R2015b/extern/lib/glnxa64/mexFunction.map -Wl,--no-undefined
-LDOPTIMFLAGS=-O
+LD=/usr/bin/xcrun -sdk macosx10.11 clang
+LDFLAGS=-Wl,-twolevel_namespace -undefined error -arch x86_64 -mmacosx-version-min=10.11 -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -bundle  -Wl,-exported_symbols_list,/Applications/MATLAB_R2015b.app/extern/lib/maci64/mexFunction.map -L/Applications/MATLAB_R2015b.app/bin/maci64 -lmx -lmex -lmat -lc++ -Wl,-exported_symbols_list,/Applications/MATLAB_R2015b.app/extern/lib/maci64/mexFunction.map
+LDOPTIMFLAGS=
 LDDEBUGFLAGS=-g
-Arch=glnxa64
+Arch=maci64
 OMPFLAGS=
 OMPLINKFLAGS=
-EMC_COMPILER=gcc
+EMC_COMPILER=Xcode with Clang
 EMC_CONFIG=optim

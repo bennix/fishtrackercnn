@@ -19,58 +19,58 @@
 
 /* Variable Definitions */
 static emlrtRSInfo emlrtRSI = { 27, "pcaangle",
-  "/home/bennix/Downloads/fishtrackercnn-master/pcaangle.m" };
+  "/Users/xuzhiping/fishtrackercnn/pcaangle.m" };
 
 static emlrtRSInfo b_emlrtRSI = { 28, "pcaangle",
-  "/home/bennix/Downloads/fishtrackercnn-master/pcaangle.m" };
+  "/Users/xuzhiping/fishtrackercnn/pcaangle.m" };
 
 static emlrtRSInfo c_emlrtRSI = { 31, "pcaangle",
-  "/home/bennix/Downloads/fishtrackercnn-master/pcaangle.m" };
+  "/Users/xuzhiping/fishtrackercnn/pcaangle.m" };
 
 static emlrtRSInfo d_emlrtRSI = { 32, "pcaangle",
-  "/home/bennix/Downloads/fishtrackercnn-master/pcaangle.m" };
+  "/Users/xuzhiping/fishtrackercnn/pcaangle.m" };
 
 static emlrtRSInfo h_emlrtRSI = { 45, "cov",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/cov.m" };
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/lib/matlab/datafun/cov.m" };
 
 static emlrtRSInfo i_emlrtRSI = { 101, "cov",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/cov.m" };
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/lib/matlab/datafun/cov.m" };
 
 static emlrtRSInfo j_emlrtRSI = { 94, "cov",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/cov.m" };
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/lib/matlab/datafun/cov.m" };
 
 static emlrtRSInfo k_emlrtRSI = { 82, "cov",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/cov.m" };
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/lib/matlab/datafun/cov.m" };
 
 static emlrtRSInfo l_emlrtRSI = { 78, "cov",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/cov.m" };
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/lib/matlab/datafun/cov.m" };
 
 static emlrtRSInfo m_emlrtRSI = { 96, "eig",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/lib/matlab/matfun/eig.m" };
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/lib/matlab/matfun/eig.m" };
 
 static emlrtRSInfo n_emlrtRSI = { 103, "eig",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/lib/matlab/matfun/eig.m" };
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/lib/matlab/matfun/eig.m" };
 
 static emlrtRSInfo o_emlrtRSI = { 14, "xzgeev",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+reflapack/xzgeev.m"
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/eml/+coder/+internal/+reflapack/xzgeev.m"
 };
 
 static emlrtRSInfo p_emlrtRSI = { 22, "xzgeev",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+reflapack/xzgeev.m"
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/eml/+coder/+internal/+reflapack/xzgeev.m"
 };
 
 static emlrtRSInfo q_emlrtRSI = { 23, "xzgeev",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+reflapack/xzgeev.m"
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/eml/+coder/+internal/+reflapack/xzgeev.m"
 };
 
 static emlrtRTEInfo emlrtRTEI = { 1, 18, "pcaangle",
-  "/home/bennix/Downloads/fishtrackercnn-master/pcaangle.m" };
+  "/Users/xuzhiping/fishtrackercnn/pcaangle.m" };
 
 static emlrtRTEInfo c_emlrtRTEI = { 27, 19, "cov",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/cov.m" };
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/lib/matlab/datafun/cov.m" };
 
 static emlrtRTEInfo d_emlrtRTEI = { 43, 19, "cov",
-  "/usr/local/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/cov.m" };
+  "/Applications/MATLAB_R2015b.app/toolbox/eml/lib/matlab/datafun/cov.m" };
 
 /* Function Definitions */
 real_T pcaangle(const emlrtStack *sp, emxArray_real_T *x, emxArray_real_T *y)
@@ -126,7 +126,7 @@ real_T pcaangle(const emlrtStack *sp, emxArray_real_T *x, emxArray_real_T *y)
   /*  */
   /*    If pcaangle is called with no arguments, the function enters */
   /*    demonstration mode.  */
-  /* % AUTHOR    : Jï¿½ger Hansegï¿½rd  */
+  /* % AUTHOR    : Jï¿ger Hansegï¿rd  */
   /* % $DATE     : 06-Dec-2004 10:13:10 $  */
   /* % DEVELOPED : 7.0.1.24704 (R14) Service Pack 1  */
   /* % FILENAME  : pcaangle.m  */
