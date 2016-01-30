@@ -1,3 +1,4 @@
+buildtrainingdata;
 [net, info,all_nets,nets] = cnn_fish();
 predict_fish;
 cnn_trajectory;
